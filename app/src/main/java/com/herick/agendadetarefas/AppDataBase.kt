@@ -9,7 +9,7 @@ import com.herick.agendadetarefas.model.Usuario
 
 @Database(entities = [Usuario::class], version = 1)
 abstract class AppDataBase : RoomDatabase() {
-    abstract fun usuarioDap(): UsuarioDAO
+    abstract fun usuarioDao(): UsuarioDAO
 
     companion object {
         private const val DATABASE_NOME = "DB_USUARIOS"
