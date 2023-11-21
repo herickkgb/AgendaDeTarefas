@@ -24,4 +24,7 @@ interface UsuarioDAO {
         novaIdade: String
 
     )
+
+    @Query("DELETE FROM tabela_usuarios WHERE uid = :id")
+    fun delete(id: Int)
 }

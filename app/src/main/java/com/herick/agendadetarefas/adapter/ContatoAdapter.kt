@@ -8,10 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.herick.agendadetarefas.AppDataBase
 import com.herick.agendadetarefas.AtualizarUsuario
+import com.herick.agendadetarefas.dao.UsuarioDAO
 import com.herick.agendadetarefas.databinding.ActivityCadastrarUsuarioBinding
 import com.herick.agendadetarefas.databinding.ContatoItemBinding
 import com.herick.agendadetarefas.model.Usuario
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class ContatoAdapter(private val context: Context, private val listaUsuario: MutableList<Usuario>) :
     RecyclerView.Adapter<ContatoAdapter.ContatoViewHolder>() {
@@ -57,6 +63,19 @@ class ContatoAdapter(private val context: Context, private val listaUsuario: Mut
             intent.putExtra("uid", listaUsuario[position].uid)
 
             context.startActivity(intent)
+        }
+
+        holder.btDeletar.setOnClickListener {
+            CoroutineScope(Dispatchers.IO).launch {
+                val usuario = listaUsuario[position]
+                val usuarioDAO: UsuarioDAO = AppDataBase.getInstance(context).usuarioDao()
+                usuarioDAO.delete(usuario.uid)
+                listaUsuario.remove(usuario)
+
+                withContext(Dispatchers.Main) {
+                    notifyDataSetChanged()
+                }
+            }
         }
 
     }
