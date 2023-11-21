@@ -48,13 +48,15 @@ class CadastrarUsuario : AppCompatActivity() {
                             "Preencha todos os campos!",
                             Toast.LENGTH_SHORT
                         ).show()
-                        finish()
+
                     } else {
                         Toast.makeText(
                             applicationContext,
                             "Sucesso ao cadastrar usuário!",
                             Toast.LENGTH_SHORT
                         ).show()
+                        finish()
+
                     }
                 }
             }
@@ -69,5 +71,4 @@ class CadastrarUsuario : AppCompatActivity() {
         usuarioDAO = AppDataBase.getInstance(this).usuarioDao()
         usuarioDAO.inserir(listaUsuario)
     }
-
 }
