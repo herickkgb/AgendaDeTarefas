@@ -3,6 +3,10 @@
 **Resumo:**
 📱 Apresento meu último projeto: um aplicativo de Agenda Telefônica desenvolvido para aprimorar minhas habilidades em Android e bancos de dados locais usando a poderosa biblioteca ROOM.
 
+#Imagens do App
+<div align="center">
+  <img src="app/src/main/res/video/apresentacao.gif?raw=true" width="150">
+</div>
 **Recursos Principais:**
 - ✨ Inserção, edição e exclusão de contatos de maneira intuitiva.
 - 🔄 Operações de CRUD eficientes, garantindo uma experiência fluida ao usuário.
@@ -23,5 +27,7 @@
 Agradeço a todos pela oportunidade de compartilhar este projeto. Se tiverem perguntas, estou à disposição para discutir e aprender mais.
 
 **#DesenvolvimentoAndroid #ROOM #AgendaTelefonica #AppDev #LinkedinDeveloper**
+
+
 
  
